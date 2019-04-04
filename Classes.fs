@@ -91,3 +91,26 @@ obj.display( )
 obj.display1( )
 Console.Read()
 
+
+open System
+type Dept(d)=
+    class 
+    let mutable dname = d
+    member d.Hoe()=
+        printfn "Department Name: %s" dname
+    end
+type Emp(d,id,n)=
+    class
+    inherit Dept(d)
+    let mutable Id=id
+    let mutable name = n
+    member e.Show()=
+        base.Hoe()
+        printfn "Id is : %d" Id
+        printfn "Name is : %s" name
+    end
+
+let obj = new Emp("Dev",12,"Datar")
+
+obj.Show()
+Console.Read()
